@@ -1,0 +1,256 @@
+%**************************************************************************
+%*
+%*  Paper: ``INSTRUCTIONS FOR AUTHORS OF LATEX DOCUMENTS''
+%*
+%*  Publication: 2025 Simulation Workshop Proceedings template 
+%*
+%*  Filename: sw25paper.tex
+%*
+%*  Date: June 15, 2022
+%*
+%*  Adapted from WSC Proceedings Author Kit
+%*
+%*  All files need the following
+\input{sw25style.tex}     % download from author kit.  Style files for SW formatting. Don't remove this line - required for generating the final paper!
+
+\documentclass{swpaperproc}
+\usepackage{latexsym}
+%\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+
+%
+%****************************************************************************
+% AUTHOR: You may want to use some of these packages. (Optional)
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+%****************************************************************************
+
+
+
+%
+%****************************************************************************
+% AUTHOR: If you do not wish to use hyperlinks, then just comment
+% out the hyperref usepackage commands below.
+
+%% This version of the command is used if you use pdflatex. In this case you
+%% cannot use ps or eps files for graphics, but pdf, jpeg, png etc are fine.
+
+\usepackage[pdftex,colorlinks=true,urlcolor=blue,citecolor=black,anchorcolor=black,linkcolor=black]{hyperref}
+
+%% The next versions of the hyperref command are used if you adopt the
+%% outdated latex-dvips-ps2pdf route in generating your pdf file. In
+%% this case you can use ps or eps files for graphics, but not pdf, jpeg, png etc.
+%% However, the final pdf file should embed all fonts required which means that you have to use file
+%% formats which can embed fonts. Please note that the final PDF file will not be generated on your computer!
+%% If you are using WinEdt or PCTeX, then use the following. If you are using
+%% Y&Y TeX then replace "dvips" with "dvipsone"
+
+%%\usepackage[dvips,colorlinks=true,urlcolor=blue,citecolor=black,%
+%% anchorcolor=black,linkcolor=black]{hyperref}
+%****************************************************************************
+
+
+
+		
+
+
+
+%
+%****************************************************************************
+%*
+%* AUTHOR: YOUR CALL!  Document-specific macros can come here.
+%*
+%****************************************************************************
+
+% If you use theoremes
+\newtheoremstyle{sw}% hnamei
+{3pt}% hSpace abovei
+{3pt}% hSpace belowi
+{}% hBody fonti
+{}% hIndent amounti1
+{\bf}% hTheorem head fontbf
+{}% hPunctuation after theorem headi
+{.5em}% hSpace after theorem headi2
+{}% hTheorem head spec (can be left empty, meaning `normal')i
+
+\theoremstyle{sw}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{ \arabic{theorem}}
+\newtheorem{corollary}[theorem]{Corollary}
+\renewcommand{\thecorollary}{\arabic{corollary}}
+\newtheorem{definition}{Definition}
+\renewcommand{\thedefinition}{\arabic{definition}}
+
+
+%#########################################################
+%*
+%*  The Document.
+%*
+\begin{document}
+
+%***************************************************************************
+
+
+% AUTHOR: AUTHOR NAMES GO HERE
+% FORMAT AUTHORS NAMES Like: Author1, Author2 and Author3 (last names)
+%
+%		You need to change the author listing below!
+%               Please list ALL authors using last name only, separate by a comma except
+%               for the last author, separate with "and"
+%
+\SWpagesetup{LastName1, LastName2, and LastNameLastAuthor}
+
+% AUTHOR: Enter the title, all letters in upper case
+\title{THE TITLE SHOULD BE SET IN 11 PT TIMES NEW ROMAN, BOLD, AND CENTRED}
+
+% AUTHOR: Enter the authors of the article, see end of the example document for further examples
+\author{\textit{Dr. Andrea A. Adams}\\ [11pt]
+University of Somewhere\\
+Address\\
+aadams@somewhere.ac.uk\\
+% Multiple authors are entered as follows.
+% You may also need to adjust the titlevbox size in the preamble - search for titlevboxsize
+\and
+\textit{Dr. Barry B. Brown}\\[11pt]
+University of Somewhere\\
+Address\\
+bbrown@somewhere.ac.uk\\
+\and
+\textit{Mr. Charles C. Cousins}\\ [11pt]
+Company name\\
+Address\\
+cousins@xyz.co.uk\\
+}
+
+\maketitle
+
+\section*{ABSTRACT}
+This example paper contains instructions for the preparation of accepted papers for the Operational Research Society Simulation Workshop which will be held from 31 March \text{-} 2 April 2025. Please follow these guidelines as closely as possible. Information about the workshop can be found via the Operational Research Society website: \href{https://www.theorsociety.com/ORS/Events/2025/Simulation-Workshop/SW25-Main.aspx?EventKey=SW25&WebsiteKey=c1745213-aec0-45e5-a960-0ec98ebabd4e}{www.theorsociety.com/events/simulation-workshop}. The abstract text for the paper should be typed using Times New Roman 11-point, fully justified. Please note the setting of the word ``ABSTRACT'' at the beginning of the paragraph (bold, upper case, non-italics). The title, author names, and affiliation are to be positioned centrally as shown above. Further details of the paper format are contained in this sample paper. 
+
+%\section*{Keywords:} alpha, beta
+
+\section{INTRODUCTION}
+\label{sec:intro}
+
+This paper provides instructions for the preparation of papers for the 2025
+Simulation Workshop (SW25) using \LaTeX. There is a companion paper that
+provides instructions for the preparation of papers using Microsoft Word.
+
+\textbf{The easiest way to write a paper using \LaTeX\ that complies with the
+requirements is to edit the source file, {\tt sw25paper.tex,} for this document.}
+
+\section{LAYOUT OF THE PAPER}
+
+\subsection{Basic Layout Details}
+
+Major words should be capitalised.
+
+Equation example below:
+
+\begin{equation} \label{eq:quadratic}
+E = mc^2
+\end{equation}
+
+Preferably, figures should be inserted in the text, soon after they are referred to. The same
+applies to tables. Figures, tables and equations should be numbered e.g. Figure 1. Place figure
+captions below the figure and table captions above the table, as per examples below.
+
+
+\begin{table}[h]
+\centering
+\caption{Results of Experiments.\label{tab: tableone}}
+\begin{tabular}{|r|l|}
+\hline
+Experiment & Results \\ \hline
+1 & 15.3 \\ \hline
+2 & 17.2 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+{
+\centering
+\includegraphics[width=0.50\textwidth]{io}
+\caption{This is an Input/Output Diagram.\label{fig: tahi}}
+}
+\end{figure}
+
+Programming code example below:\newline
+\newline
+{\tt class ClassName\{}\\
+{\tt code example}\\
+{\tt add the details}\\
+{\tt \};}
+
+
+References should be cited in the text with author names and date in brackets. 
+Surname\_Author (2010) could also be cited parenthetically (Surname\_Author, 2010). For a paper with exactly two authors use (Surname\_Author1 and Surname\_Author2, 2010) and for papers with more than two authors use Surname\_Author1 et al (2010). For multiple citations separate citations with a semicolon, i.e. (Surname\_Author, 2010; Surname\_Author1 et al 2010). References to internet sites must be given in brackets in the text, not in the reference list. The full URL must be given, followed by the date website was accessed. For example, \href{https://www.brunel.ac.uk/computer-science}{https://www.brunel.ac.uk/computer-science} accessed 1 January 2019.
+
+Examples: \\
+\citeN{chen10} or \cite{chen10}.\\
+\citeN{glover97} or \cite{glover97}.\\
+\citeN{mourtos03} or \cite{mourtos03}.\\
+\citeN{osman95} or \cite{osman95}.\\
+\citeN{ryan06} or \cite{ryan06}.
+
+
+\subsection{Length of the Abstract and Paper}
+The abstract for the paper should be 150 words max. The overall length of the paper should be between 3 and 10 {\em Proceedings pages} (10-15 pages for the introductory/advanced tutorial stream).
+
+\section{SUBMISSION OF ACCEPTED PAPER}
+
+You are responsible for ensuring that your final submission conforms to the specification in this
+sample document. The submission deadline for the paper is {\bf 21 October 2024}. Submission
+instructions will be found at \href{https://www.theorsociety.com/ORS/Events/2025/Simulation-Workshop/SW25-Main.aspx?EventKey=SW25&WebsiteKey=c1745213-aec0-45e5-a960-0ec98ebabd4e}{www.theorsociety.com/events/simulation-workshop}.
+
+\section*{ACKNOWLEDGMENTS}
+An acknowledgements section may be added, if required, to acknowledge the contribution of
+other research work. The acknowledgements section should be placed between the main text of
+the paper and before the References section (or any appendices included).
+
+\appendix
+
+\section{APPENDICES} \label{app:quadratic}
+Appendices may be added, if required, after the Acknowledgements section. For multiple appendices, label them \textbf{A}, \textbf{B}, \textbf{C} etc. Label figure and tables in appendices as appropriate, for example Figure A-1.
+
+\section{QUADRATIC}
+The solution to (1) has the form
+\begin{equation} \label{eq: quadratic sol}
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a} \mbox{ if } a \ne 0.
+\end{equation}
+
+\section{LIST}
+
+The following is an example of enumerated list.
+
+
+\begin{enumerate}
+\item   Item 1.
+\item	Item 2.
+\item	Item 3.
+\end{enumerate}
+
+% Please don't exchange the bibliographystyle style
+\bibliographystyle{sw}
+% AUTHOR: Include your bib file here
+\bibliography{demobib}
+
+\section*{AUTHOR BIOGRAPHIES}
+
+\noindent {\bf ANDREA ADAMS} received a BSc (Hons) Computer Science from the University of Somewhere in
+1986. She completed her PhD at the same University in 1990. She is currently a principal
+researcher and lecturer in the Department of Computing. Dr Adams has an extensive background
+in this field for the past 10 years. \href{http://www.somewhere.hw.ac.uk/~aadams}{http://www.somewhere.hw.ac.uk/~aadams}\\
+
+\noindent {\bf BARRY BROWN} is a lecturer at The University of Somewhere etc.\\
+
+\noindent {\bf CHARLES COUSINS} is a researcher with ACME Computers Inc. etc.\\
+
+\noindent This template is adapted with thanks from the Proceedings of the Winter Simulation Conference template.
+
+\end{document}
+
